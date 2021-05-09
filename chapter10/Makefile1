@@ -1,0 +1,23 @@
+target = test_stock usestock2
+
+all: $(target)
+.PHONY: all
+
+test_stock: test_stock.o stocks.o
+	g++ test_stock.o stocks.o -o test_stock
+
+test_stock.o: test_stock.cpp
+	g++ -c test_stock.cpp
+
+stocks.o: stocks.cpp
+	g++ -c stocks.cpp
+
+
+usestock2: usestock2.o stocks.o
+	g++ usestock2.o stocks.o -o usestock2
+
+usestock2.o: usestock2.cpp
+	g++ -c usestock2.cpp
+
+clean:
+	rm *.o $(target)
