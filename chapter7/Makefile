@@ -1,4 +1,4 @@
-target=recur calling protos twoarg lotto arfun1 arrfun2 travel atrctfun strcptr topfive
+target=fun_ptr recur calling protos twoarg lotto arfun1 arrfun2 travel atrctfun strcptr topfive
 cxx=g++
 
 all : $(target)
@@ -35,6 +35,9 @@ topfive : topfive.cpp
 	$(cxx) -g $< -o $@
 
 recur : recur.cpp
+	$(cxx) -g $< -o $@
+
+fun_ptr : fun_ptr.cpp
 	$(cxx) -g $< -o $@
 
 clean:
